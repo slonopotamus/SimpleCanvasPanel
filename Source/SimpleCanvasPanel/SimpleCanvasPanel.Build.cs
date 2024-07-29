@@ -10,8 +10,6 @@ public class SimpleCanvasPanel : ModuleRules
 				"Core",
 				"CoreUObject",
 				"Engine",
-				"RHI",
-				"RenderCore",
 				"Slate",
 				"SlateCore",
 				"UMG",
