@@ -1,0 +1,20 @@
+﻿{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "SimpleCanvasPanel",
+	"Description": "UMG widget for SCanvas",
+	"Category": "UI",
+	"CreatedBy": "Marat Radchenko",
+	"CreatedByURL": "https://github.com/slonopotamus",
+	"DocsURL": "https://github.com/slonopotamus/SimpleCanvasPanel",
+	"MarketplaceURL": "",
+	"CanContainContent": false,
+	"Modules": [
+		{
+			"Name": "SimpleCanvasPanel",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
