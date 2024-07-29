@@ -21,19 +21,19 @@ UClass* USimpleCanvasPanel::GetSlotClass() const
 	return USimpleCanvasPanelSlot::StaticClass();
 }
 
-void USimpleCanvasPanel::OnSlotAdded(UPanelSlot* Slot)
+void USimpleCanvasPanel::OnSlotAdded(UPanelSlot* InSlot)
 {
 	if (MyCanvas)
 	{
-		CastChecked<USimpleCanvasPanelSlot>(Slot)->BuildSlot(MyCanvas.ToSharedRef());
+		CastChecked<USimpleCanvasPanelSlot>(InSlot)->BuildSlot(MyCanvas.ToSharedRef());
 	}
 }
 
-void USimpleCanvasPanel::OnSlotRemoved(UPanelSlot* Slot)
+void USimpleCanvasPanel::OnSlotRemoved(UPanelSlot* InSlot)
 {
-	if (MyCanvas && Slot->Content)
+	if (MyCanvas && InSlot->Content)
 	{
-		if (const auto Widget = Slot->Content->GetCachedWidget())
+		if (const auto Widget = InSlot->Content->GetCachedWidget())
 		{
 			MyCanvas->RemoveSlot(Widget.ToSharedRef());
 		}
