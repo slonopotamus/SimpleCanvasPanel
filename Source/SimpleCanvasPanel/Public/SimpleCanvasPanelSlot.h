@@ -2,7 +2,6 @@
 
 #include "Components/PanelSlot.h"
 #include "Widgets/SCanvas.h"
-
 #include "SimpleCanvasPanelSlot.generated.h"
 
 UCLASS()

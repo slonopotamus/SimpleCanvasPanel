@@ -43,7 +43,7 @@ SpaceAfterTemplateKeyword:                      false
 SpacesInAngles:                                 false
 ContinuationIndentWidth:                        4
 IndentCaseLabels:                               true
-IncludeBlocks:                                  Regroup
+IncludeBlocks:                                  Merge
 IncludeCategories:
   - Regex:    '.*\.generated\.h'
     Priority: 2

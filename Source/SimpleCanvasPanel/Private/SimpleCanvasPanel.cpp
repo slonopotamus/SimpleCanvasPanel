@@ -1,5 +1,4 @@
 #include "SimpleCanvasPanel.h"
-
 #include "SimpleCanvasPanelSlot.h"
 #include "Widgets/SCanvas.h"
 

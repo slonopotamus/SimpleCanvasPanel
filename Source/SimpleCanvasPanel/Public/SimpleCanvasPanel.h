@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Components/PanelWidget.h"
-
 #include "SimpleCanvasPanel.generated.h"
 
 class USimpleCanvasPanelSlot;

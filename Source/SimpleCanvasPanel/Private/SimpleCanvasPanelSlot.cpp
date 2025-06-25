@@ -1,5 +1,4 @@
 #include "SimpleCanvasPanelSlot.h"
-
 #include "Components/Widget.h"
 
 void USimpleCanvasPanelSlot::SetPosition(const FVector2D& InPosition)
