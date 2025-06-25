@@ -7,13 +7,26 @@ void USimpleCanvasPanelSlot::SetPosition(const FVector2D& InPosition)
 	Position = InPosition;
 	if (Slot)
 	{
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3)
 		Slot->SetPosition(Position);
+#else
+		Slot->Position(Position);
+#endif
 	}
 }
 
 FVector2D USimpleCanvasPanelSlot::GetPosition() const
 {
-	return Slot ? Slot->GetPosition() : Position;
+	if (Slot)
+	{
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3)
+		return Slot->GetPosition();
+#else
+		return Slot->PositionAttr.Get();
+#endif
+	}
+
+	return Position;
 }
 
 void USimpleCanvasPanelSlot::SetSize(const FVector2D& InSize)
@@ -21,13 +34,26 @@ void USimpleCanvasPanelSlot::SetSize(const FVector2D& InSize)
 	Size = InSize;
 	if (Slot)
 	{
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3)
 		Slot->SetSize(Size);
+#else
+		Slot->Size(InSize);
+#endif
 	}
 }
 
 FVector2D USimpleCanvasPanelSlot::GetSize() const
 {
-	return Slot ? Slot->GetSize() : Size;
+	if (Slot)
+	{
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3)
+		return Slot->GetSize();
+#else
+		return Slot->SizeAttr.Get();
+#endif
+	}
+
+	return Size;
 }
 
 void USimpleCanvasPanelSlot::SetHorizontalAlignment(const EHorizontalAlignment InHorizontalAlignment)
@@ -35,7 +61,11 @@ void USimpleCanvasPanelSlot::SetHorizontalAlignment(const EHorizontalAlignment I
 	HorizontalAlignment = InHorizontalAlignment;
 	if (Slot)
 	{
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3)
 		Slot->SetHorizontalAlignment(HorizontalAlignment);
+#else
+		Slot->HAlign(HorizontalAlignment);
+#endif
 	}
 }
 
@@ -43,8 +73,13 @@ EHorizontalAlignment USimpleCanvasPanelSlot::GetHorizontalAlignment() const
 {
 	if (Slot)
 	{
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3)
 		return Slot->GetHorizontalAlignment();
+#else
+		return Slot->HAlignment;
+#endif
 	}
+
 	return HorizontalAlignment;
 }
 
@@ -53,7 +88,11 @@ void USimpleCanvasPanelSlot::SetVerticalAlignment(const EVerticalAlignment InVer
 	VerticalAlignment = InVerticalAlignment;
 	if (Slot)
 	{
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3)
 		Slot->SetVerticalAlignment(InVerticalAlignment);
+#else
+		Slot->VAlign(InVerticalAlignment);
+#endif
 	}
 }
 
@@ -61,7 +100,11 @@ EVerticalAlignment USimpleCanvasPanelSlot::GetVerticalAlignment() const
 {
 	if (Slot)
 	{
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 3)
 		return Slot->GetVerticalAlignment();
+#else
+		return Slot->VAlignment;
+#endif
 	}
 	return VerticalAlignment;
 }

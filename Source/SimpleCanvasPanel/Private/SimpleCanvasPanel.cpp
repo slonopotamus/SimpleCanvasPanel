@@ -6,7 +6,12 @@
 USimpleCanvasPanel::USimpleCanvasPanel()
 {
 	bIsVariable = false;
+
+#if ENGINE_MAJOR_VERSION > 5 || (ENGINE_MAJOR_VERSION == 5 && ENGINE_MINOR_VERSION >= 1)
 	SetVisibilityInternal(ESlateVisibility::SelfHitTestInvisible);
+#else
+	Visibility = ESlateVisibility::SelfHitTestInvisible;
+#endif
 }
 
 void USimpleCanvasPanel::ReleaseSlateResources(const bool bReleaseChildren)
