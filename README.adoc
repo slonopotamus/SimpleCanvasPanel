@@ -1,6 +1,6 @@
 ﻿= Simple Canvas Panel
 
 Simple Canvas Panel is an Unreal Engine UMG widget for `SCanvas`, a simpler and faster alternative to builtin `CanvasPanel` that internally uses `SConstraintCanvas`.
-The key advantage of `SCanvas` over `SConstraintCanvas` is that the former doesn't need to recalculate layout when child size changes.
+The key advantage of `SCanvas` over `SConstraintCanvas` is that the former doesn't need to recalculate layout when child sizes change.
 
 Supports Unreal Engine 4.27 and newer.
